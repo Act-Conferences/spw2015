@@ -1,0 +1,146 @@
+[% BLOCK invoice_body  %]
+   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Open+Sans">
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+    </style>
+<DIV style="float:right;">
+  
+</div>
+    <table border="0">
+      <tr>
+        <td>&nbsp;</td>
+        <td>
+<div style ="font-family: 'Ubuntu Mono', sans-serif; font-size: 1.2em;">Swiss Perl Workshop 2014</div><br />
+Perl-Verein Schweiz<br />
+c/o Matthias Bloch<br />
+Im Rebberg 29<br />
+4115 Mariastein<br />
+Switzerland</td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="top" width="50%">
+          [% IF invoice.company; invoice.company; "<br />"; END %]
+          [% invoice.address | html_line_break %]
+          <!--[% IF invoice.vat %]
+            <br />
+            {{VAT Number}}:
+          [% invoice.vat; END %]-->
+        </td>
+        <td valign="top" width="50%">
+          Attendee:<br/>
+          [% invoice.first_name %]&nbsp;[% invoice.last_name %]
+        </td>
+      </tr>
+      
+      <tr>
+        <td colspan="2"><br/></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <table border="0" width="100%">
+            <tr>
+              <th align="left">{{Invoice #}}</th>
+              <th align="left">Order  number</th>
+              <th align="left">{{Dated}}</th>
+            </tr>
+            <tr>
+              <td>[% invoice.invoice_no %]</td>
+              [%# info about the payment: order #, payment date and payment means
+                   you can use this to turn this invoice into a receipt
+               %]
+              <td>[% order.order_id %] - [% date_format(order.datetime, 'date_short','de') %] - [% order.means %]</td>
+              <td>[% date_format(invoice.datetime, 'date_short') %]</td>
+            </tr>
+	  </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <table border="1" width="100%" cellspacing="3" cellpadding="4">
+            <tr>
+              <th>{{Description}}</th>
+              <th>{{Quantity}}</th>
+              <th>{{Unit Price}}</th>
+              <th>{{Total}}</th>
+            </tr>
+            [% FOREACH item IN order.items %]
+            <tr>
+              <td align="left">[% item.name %]</td>
+              <td align="center">1</td>
+              <td align="right">[% item.amount %] [% invoice.currency %]</td>
+              <td align="right">[% item.amount %] [% invoice.currency %]</td>
+            </tr>
+            [% END %]
+            <tr>
+              <td colspan="3" align="right">{{Total due}}</td>
+              <td align="right">[% invoice.amount %] [% invoice.currency %] </td>
+            </tr>
+          </table>
+         </td>
+        </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+
+	 <tr>
+	 <td colspan="2">Please make your payment using online banking or by post.<br />
+	                 We have exactly 50 conference tickets to sell, based on order of the incoming payment.</td>
+     </tr>
+     <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+	  <td colspan="2">Payment information:</td>
+      </tr>
+      <tr><td>PC</td><td>85-321855-3</td></tr>
+      <tr><td>IBAN</td><td>CH59 0900 0000 8532 1855 3</td></tr>
+	  <tr><td>BIC from Postfinance</td><td>POFICHBEXXX</td></tr>
+      <tr valign="top"><td>Name/address of beneficiary bank</td><td>Swiss Post – PostFinance<br />Nordring 8<br />3030 Berne<br />Switzerland</td></tr>
+      <tr valign="top"><td>Payment purpose</td><td>SPW 2014<br />Order number: [% order.order_id %]<br/>[% invoice.first_name %]&nbsp;[% invoice.last_name %]</td></tr>
+
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+	      <td colspan="2">Perl-Verein Schweiz is not liable to VAT and has no VAT number.</td>
+	  </tr>
+    </table>
+
+[% END %]
+
+[% IF printer_friendly %]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="[% global.request.language %]" xml:lang="[% global.request.language %]">
+<head>
+<title>{{Invoice}}</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+[% PROCESS invoice_body %]
+</body>
+</html>
+
+
+[% ELSE;
+   WRAPPER ui title = loc('Invoice')
+%]
+
+[%# Remove the following <div>...</div> if you use the printer_friendly version mechanism %]
+<div id="dontprint">
+<p>{{You can print this page: only the invoice below will be printed.}}</p>
+</div>
+
+[% PROCESS invoice_body %]
+
+<div align="center">
+<p><a href="[% printer_uri %]" target="_new">{{Printer friendly version}}</a></p>
+</div>
+
+[% END; END %]

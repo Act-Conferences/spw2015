@@ -1,0 +1,80 @@
+[% WRAPPER ui title = global.conference.name %]
+
+<p>
+Welcome to the third Swiss Perl Workshop.
+</p>
+
+<p>Date: Friday, 28. August 2015 and Saturday, 29. August 2015<br />
+Venue: <a href="[% make_uri('venue.html') %]">Flörli Olten</a><br />
+Language: English
+</p>
+
+<!--
+<p>
+Help us to advertise the workshop in your company: <a href="[% make_uri_info('images', 'flyer-spw-2014.pdf') %]">Download the flyer as PDF</a>
+</p>
+-->
+
+<!--
+<p>
+Workshop times: The <a href="[% make_uri('schedule') %]">schedule</a> is online.
+</p>
+-->
+
+<!--
+<p>
+<a href="[% make_uri('course.html') %]">Mastering Perl Course</a> with brian d foy<br />
+9.-10. September 2014, <a href="http://www.colab-zurich.ch/">Colab Zürich</a> <br />
+<a href="https://www.kickstarter.com/projects/1422827986/mastering-perl-at-the-swiss-perl-workshop">Kickstarter campaign for registration</a>
+</p>
+-->
+
+<!--
+<p>
+Also, because we have rented a house with a few rooms, we are very open to any workshop-like ideas. This could be anything Perl that 2-10 people can attend.
+</p>
+-->
+
+<p>
+We are looking for Sponsors. Interested? Have a look at the packages on the <a href="[% make_uri('sponsoring.html') %]">Sponsoring</a> page.
+</p>
+
+<p>The workshop will be a great opportunity to:</p>
+<ul class="check-list">
+<li>meet Perl hackers from Switzerland and other countries</li>
+<li>learn from and be inspired by talks</li>
+<li>chat and socialise during breaks and attendees dinner</li>
+</ul>
+
+<p>
+Watch this space for updates, or check the <a href="[% global.request.base_url %][% make_uri_info( 'atom', global.request.language ) %].xml">feed</a>.
+</p>
+
+[% news = global.news(3);
+   IF news.size > 2;
+     more = news.pop;
+   END;
+ %]
+
+[% IF news.size %]
+<h2>Latest News</h2>
+[% FOREACH item = news %]
+<div class="news-entry">
+ <h3 class="news-header">
+  <span class="news-date">[% date_format(item.datetime, 'date_short') %]</span>
+  <span class="news-title">[% item.title %]</span>
+ </h3>
+ <div class="news-text">
+  [% item.content %]
+ </div>
+</div>
+[% END %]
+[% END %]
+
+[% IF more %]
+<p>
+ <a href="[% make_uri('news') %]" class="news-link">Older announcements</a>
+</p>
+[% END %]
+
+[% END %]
