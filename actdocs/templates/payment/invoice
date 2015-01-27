@@ -104,7 +104,7 @@ Switzerland</td>
       <tr><td>IBAN</td><td>CH59 0900 0000 8532 1855 3</td></tr>
 	  <tr><td>BIC from Postfinance</td><td>POFICHBEXXX</td></tr>
       <tr valign="top"><td>Name/address of beneficiary bank</td><td>Swiss Post – PostFinance<br />Nordring 8<br />3030 Berne<br />Switzerland</td></tr>
-      <tr valign="top"><td>Payment purpose</td><td>SPW 2014<br />Order number: [% order.order_id %]<br/>[% invoice.first_name %]&nbsp;[% invoice.last_name %]</td></tr>
+      <tr valign="top"><td>Payment purpose</td><td>SPW 2015<br />Order number: [% order.order_id %]<br/>[% invoice.first_name %]&nbsp;[% invoice.last_name %]</td></tr>
 
       <tr>
         <td colspan="2">&nbsp;</td>
