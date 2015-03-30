@@ -126,6 +126,7 @@ function linkTo_UnCryptMailto( s )
 											<li><a target="_blank" href="http://www.oetiker.ch/"><img src="[% make_uri_info('images', 'op-logo-200.png') %]" alt="Oetiker + Partner AG" /></a></li>
 											<li><a target="_blank" href="http://www.perl-academy.de/"><img src="[% make_uri_info('images', 'pa-logo.jpg') %]" alt="perl academy" /></a></li>
 											<li><a target="_blank" href="https://www.bloonix.de/"><img src="[% make_uri_info('images', 'bloonix.png') %]" alt="BLOONIX" /></a></li>
+											<li><a target="_blank" href="http://www.gfu.net/"><img src="[% make_uri_info('images', 'gfu.png') %]" alt="GFU" /></a></li>
 											<!-- <li><img src="[% make_uri_info('images', 'wsiwlt-logo.png') %]" alt="WSIWLT" /></li> -->
 											<!-- <li><a target="_blank" href="http://www.plusw.de/"><img src="[% make_uri_info('images', 'plusw.jpg') %]" alt="plusW" /></a></li> -->
 											<li><a target="_blank" href="http://www.eventrix.ch/"><img src="[% make_uri_info('images', 'eventrix.jpg') %]" alt="Eventrix HighD WLAN" /></a></li>
