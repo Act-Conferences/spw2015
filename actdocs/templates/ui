@@ -122,6 +122,7 @@ function linkTo_UnCryptMailto( s )
 											<h2>Sponsors</h2>
 										</header>
 										<ul class="link-list">
+											<li><a target="_blank" href="http://www.open.ch/"><img src="[% make_uri_info('images', 'open-systems.png') %]" alt="Open Systems AG" /></a></li>
 											<!-- <li><a target="_blank" href="http://www.leanux.ch/"><img src="[% make_uri_info('images', 'leanux.ch.gif') %]" alt="Leanux AG" /></a></li> -->
 											<li><a target="_blank" href="http://www.oetiker.ch/"><img src="[% make_uri_info('images', 'op-logo-200.png') %]" alt="Oetiker + Partner AG" /></a></li>
 											<li><a target="_blank" href="http://www.perl-academy.de/"><img src="[% make_uri_info('images', 'pa-logo.jpg') %]" alt="perl academy" /></a></li>
