@@ -176,7 +176,7 @@ function linkTo_UnCryptMailto( s )
 									<h2>About Perl</h2>
 									<p>Perl 5 is a highly capable, feature-rich programming language with over 25 years of development. Perl 5 runs on over 100 platforms from portables to mainframes and is suitable for both rapid prototyping and large scale development projects.		
 									</p>
-									<p>"Perl" is a family of languages, "Perl 6" is part of the family, but it is a separate language which has it's own development team, its existence has no significant impact on the continuing development of "Perl 5".
+									<p>"Perl" is a family of languages, "Perl 6" is part of the family, but it is a separate language which has its own development team, its existence has no significant impact on the continuing development of "Perl 5".
 									</p>
 									<a href="http://www.perl.org/">More about Perl...</a>
 								</section>
