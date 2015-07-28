@@ -133,8 +133,8 @@ function linkTo_UnCryptMailto( s )
 											<!-- <li><a target="_blank" href="http://www.leanux.ch/"><img src="[% make_uri_info('images', 'leanux.ch.gif') %]" alt="Leanux AG" /></a></li> -->
 											<!-- <li><a target="_blank" href="http://www.oreilly.de/"><img src="[% make_uri_info('images', 'oreilly.gif') %]" alt="O'Reilly" /></a></li> -->
 											<!-- <li><a target="_blank" href="http://www.getdigital.de/"><img src="[% make_uri_info('images', 'getdigital.png') %]" alt="getDigital" /></a></li> -->
-											<!-- <li><a target="_blank" href="http://www.perl6.org/"><img src="[% make_uri_info('images', 'camelia-logo.png') %]" alt="getDigital" /></a></li> -->
 											<li><a target="_blank" href="http://envision.event-hosting.com/"><img src="[% make_uri_info('images', 'eventrix.jpg') %]" alt="Eventrix HighD WLAN" /></a></li>
+											<li><a target="_blank" href="http://www.perl6.org/"><img src="[% make_uri_info('images', 'camelia-logo.png') %]" alt="getDigital" /></a></li>
 										</ul>
 										<!--
 										<p>
